@@ -39,11 +39,6 @@ p {font-size: 16px;}
 
 }
 
-.button-inputs{
-  width:100%;
-  position:fixed;
-}
-
 .container-fluid_main {
     padding-top: 300px;
     padding-bottom: 10px;
@@ -59,13 +54,68 @@ p {font-size: 16px;}
     padding-bottom: 20px;
 }
 
-.form_buttons {
+
+.try{
+  display: inline-table;
+}
+
+label {
+  clear: none;
+  position:static;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px 1em 0px 8px;
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+  width: 120px;
+  overflow: hidden;
+}
+
+label:hover {
+  background: #DDD;
+}
+
+input.form_buttons {
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+input[type=radio],
+input.form_buttons {
+  float: center;
+  clear: none;
+  margin: 2px 0 0 2px;
+  opacity: 0.01;
+  z-index: 100;
+}
+
+
+input.form_buttons[type="radio"]:checked+label,
+.Checked+label {
+  background: #286094;
+  color: #ffffff;
+
+}
+    
+
+/*.form_buttons {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+}
+
+/*.form_buttons {
     list-style-type: none;
     margin: auto;
     padding: 0;
   }
 
-  
+/*  
   .form_buttons li {
     margin: 0 5px 0 0;
     width: 100px;
@@ -77,36 +127,3 @@ p {font-size: 16px;}
     vertical-align: top;
   }
   
-  .form_buttons label,
-  .form_buttons input {
-    display: block;
-    position: absolute;
-    border-radius: 10px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  
-  .form_buttons input[type="radio"] {
-    opacity: 0.01;
-    z-index: 100;
-  }
-  
-  .form_buttons input[type="radio"]:checked+label,
-  .Checked+label {
-    background: #286094;
-    color: #ffffff;
-
-  }
-  
-  .form_buttons label {
-    padding: 5px;
-    border: 1px solid #CCC;
-    cursor: pointer;
-    z-index: 90;
-  }
-  
-  .form_buttons label:hover {
-    background: #DDD;
-  }
