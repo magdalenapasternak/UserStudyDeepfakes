@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Computer Audio User Study</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+
+
+<!-- First Container -->
+<div class="container-fluid_top bg-1 text-center">
+  <h1></h1>
+  <h1 class="margin">Computer Audio User Study</h1>
+  <h1></h1>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <form action="thankyou.html" method="get">
+        
+   <div>
+      <p>What gender do you identify as?</p>
+      <div class="try">
+        <input type="radio"  class="form_buttons" id="male" name="gender" value="gender_male"/>
+        <label for="male">Male</label>
+        <input type="radio"  class="form_buttons" id="female" name="gender" value="gender_female"/>
+        <label for="female">Female</label>
+        <input type="radio"  class="form_buttons" id="non-binary" name="gender" value="gender_non-binary"/>
+        <label for="non-binary">Non-Binary</label>
+        <input type="radio"  class="form_buttons" id="other" name="gender" value="gender_other"/>
+        <label for="other">Other</label>
+        <input type="radio"  class="form_buttons" id="noansw" name="gender" value="gender_noansw"/>
+        <label for="noansw">Prefer Not to Answer</label>
+      </div>
+      <br></br>
+    </div>
+    <div>
+        <p>What is your age?</p>
+        <div class="try">
+          <input type="radio" class="form_buttons" id="age17-24" name="age" value="sub_age17-24"/>
+          <label for="age17-24">17-24</label>
+          <input type="radio" class="form_buttons" id="age25-34" name="age" value="sub_age25-34"/>
+          <label for="age25-34">25-34</label>
+          <input type="radio" class="form_buttons" id="age35-44" name="age" value="sub_age35-44"/>
+          <label for="age35-44">35-44</label>
+          <input type="radio" class="form_buttons" id="age45-54" name="age" value="sub_age45-54"/>
+          <label for="age45-54">45-54</label>
+          <input type="radio" class="form_buttons" id="age55+" name="age" value="sub_age55+"/>
+          <label for="age55+">55+</label>
+        </div>
+        <br></br>
+      </div>
+    <div>
+      <p>Is English your first language?</p>
+      <div class="try">
+        <input type="radio" class="form_buttons" id="yes_eng" name="language" value="yes_eng"/>
+        <label for="yes_eng">YES</label>
+        <input type="radio" class="form_buttons" id="no_eng" name="language" value="no_eng"/>
+        <label for="no_eng">NO</label>
+      </div>
+      <br></br>
+    </div>
+    <div>
+      <p>What is your highest level of education?</p>
+      <div class="try">
+        <input type="radio" class="form_buttons" id="belowhs" name="education" value="belowhighschool"/>
+        <label for="belowhs">Less Than High School Degree</label>
+        <input type="radio" class="form_buttons" id="hs" name="education" value="highschool"/>
+        <label for="hs">High School Degree</label>
+        <input type="radio" class="form_buttons" id="undgrd" name="education" value="undergraduate"/>
+        <label for="undgrd">Undergraduate Degree</label>
+        <input type="radio" class="form_buttons" id="grd" name="education" value="graduate"/>
+        <label for="grd">Graduate Degree</label>
+      </div>
+      <br></br>
+    </div>
+    <div>
+      <p>What is your level of concern for computer-generated voice relative to what it was before taking our survey?</p>
+      <div class="try">
+        <input type="radio" class="form_buttons" id="con_after_less" name="concern_after" value="concern_after_less"/>
+        <label for="con_after_less">Less Concerned</label>
+        <input type="radio" class="form_buttons" id="con_after_same" name="concern_after" value="concern_after_same"/>
+        <label for="con_after_same">Equally Concerned</label>
+        <input type="radio" class="form_buttons" id="con_after_more" name="concern_after" value="concern_after_more"/>
+        <label for="con_after_more">More Concerned</label>
+      </div>
+      <br></br>
+    </div>
+    <div>
+      <p>If your concern level changed, briefly explain how your opinion changed? (Optional)</p>
+      <textarea class="freeform" id="freeform_concern_after" name="freeform" rows="3" cols="80" placeholder="Enter text here.">
+      </textarea>
+    </div>
+    <br></br>
+
+  
+
+  <input value="Next" type="submit" class="btn btn-primary btn-xlarge" onClick="location.href='audio_sample.html'"></input>
+  
+    </form>
+
+
+</div>
+
+
+
+<!-- Footer -->
+<footer class="container-fluid_bottom footer text-center">
+  <p>Page 24/25</p> 
+</footer>
+
+</body>
+</html>

@@ -26,6 +26,7 @@ p {font-size: 16px;}
 .footer { 
     position: absolute;
     bottom: 0;
+    height: 15px;
     width: 100%;
     background-color: #fff; 
     color: #2f2f2f; /* Black Gray */
@@ -53,10 +54,18 @@ p {font-size: 16px;}
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+.container-fluid_bottom {
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
 
 .try{
   display: inline-table;
+}
+.sidenote{
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10px;
 }
 
 label {
@@ -64,12 +73,12 @@ label {
   position:static;
   display: table-cell;
   vertical-align: middle;
-  padding: 0px 1em 0px 8px;
   padding: 5px;
   border: 1px solid #CCC;
+  border-radius: 5px;
   cursor: pointer;
   z-index: 90;
-  width: 120px;
+  max-width: 120px;
   overflow: hidden;
 }
 
@@ -101,29 +110,12 @@ input.form_buttons[type="radio"]:checked+label,
   color: #ffffff;
 
 }
-    
 
-/*.form_buttons {
-  list-style-type: none;
-  margin: auto;
-  padding: 0;
+textarea{
+  border-radius: 5px;
+  padding: 15px;
+
 }
 
-/*.form_buttons {
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
-  }
 
-/*  
-  .form_buttons li {
-    margin: 0 5px 0 0;
-    width: 100px;
-    display:inline-block; 
-    position: relative;
-    height: 100%;
-    height: 100%;
-    
-    vertical-align: top;
-  }
   

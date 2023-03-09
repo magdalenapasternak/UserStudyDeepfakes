@@ -22,7 +22,56 @@
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
-    <p>AUDIO SAMPLE </p>
+  <form action="postquestion.html" method="get">
+        
+    <div>
+      <h2>Audio Sample</h2>
+      <br></br>
+      <audio controls autoplay>
+        <source id="audioPlayer" src="LA_E_1066879-.wav" type="audio/wav">
+      Your browser does not support the audio element.
+      </audio>
+      <br></br>
+       <p>Was this played audio human or computer generated?</p>
+
+       <div class="try">
+        <input type="radio" class="form_buttons" id="human" name="generation_method" value="human_gen"/>
+        <label for="human">Human</label>
+        <input type="radio" class="form_buttons" id="computer" name="generation_method" value="comp_gen"/>
+        <label for="computer">Computer</label>
+       </div>
+       <br></br>
+     </div>
+     <div>
+      <p>On a scale of 1-5, how certain are you of your decision?</p>
+      <div class="try">
+        <p class="sidenote">Low Confidence</p>
+        <input type="radio" class="form_buttons" id="one_confid" name="confidence" value="one_confidence"/>
+        <label for="one_confid">1</label>
+        <input type="radio" class="form_buttons" id="two_confid" name="confidence" value="two_confidence"/>
+        <label for="two_confid">2</label>
+        <input type="radio" class="form_buttons" id="three_confid" name="confidence" value="three_confidence"/>
+        <label for="three_confid">3</label>
+        <input type="radio" class="form_buttons" id="four_confid" name="confidence" value="four_confidence"/>
+        <label for="four_confid">4</label>
+        <input type="radio" class="form_buttons" id="five_confid" name="confidence" value="five_confidence"/>
+        <label for="five_confid">5</label>
+        <p class="sidenote">High Confidence</p>
+      </div>
+      <br></br>
+    </div>
+     <div>
+       <p>In 2 sentence or less, was there anything in the audio that influenced your decision?</p>
+       <textarea class="freeform" id="freeform" name="freeform" rows="3" cols="80" placeholder="Enter text here.">
+       </textarea>
+     </div>
+     <br></br>
+ 
+   
+ 
+   <input value="Next" type="submit" class="btn btn-primary btn-xlarge" onClick="location.href='audio_sample.html'"></input>
+   
+     </form>
     
 </div>
 
@@ -35,3 +84,48 @@
 
 </body>
 </html>
+
+<script>
+  //CHANGE STUFF UP MAKE totalTimePlayed A GLOBAL VARIABLE
+  let totalTimePlayed = 0;
+  function initAudio(audioPlayer) {
+
+audioPlayer.addEventListener(
+  'ended',
+  function() {
+    const ratioPlayedInput = $("input:text[name='input-ratioPlayed']").val() || '0';
+    let ratioPlayed = parseFloat(ratioPlayedInput);
+    let timesPlayed = $("input:text[name='input-timesPlayed']").val();
+    timesPlayed = parseInt(timesPlayed, 10) || 0;
+    const currTimesPlayed = audioPlayer.played;
+    
+    for (let i = 0; i < currTimesPlayed.length; i += 1) {
+      totalTimePlayed += currTimesPlayed.end(i) - currTimesPlayed.start(i);
+    }
+    ratioPlayed += totalTimePlayed / audioPlayer.duration;
+    ratioPlayed = parseFloat(ratioPlayed.toFixed(2));
+    timesPlayed += currTimesPlayed.length;
+
+    $("input:text[name='input-ratioPlayed']").val(ratioPlayed);
+    $("input:text[name='input-timesPlayed']").val(timesPlayed);
+  },
+  true
+);
+return true;
+}
+
+function preventNavigatingAway() {
+console.log('preventNavigatingAway');
+window.onbeforeunload = function() {
+  $('#soundPlayer').trigger('ended');
+  console.log('in window.beforeunload()');
+};
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+console.log('DOMContentLoaded!');
+const audioPlayer = document.getElementById('soundPlayer');
+initAudio(audioPlayer);
+preventNavigatingAway();
+});
+</script>
